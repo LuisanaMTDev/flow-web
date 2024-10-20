@@ -20,4 +20,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.LOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=flow-web
+          command: pages deploy dist --project-name=flow-app
