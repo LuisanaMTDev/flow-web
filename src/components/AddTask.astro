@@ -1,0 +1,45 @@
+---
+
+---
+
+<footer>
+  <input type="text" name="task-name" />
+  <select name="subject">
+    <option value="subject-1">Subject 1</option>
+    <option value="subject-2">Subject 2</option>
+  </select>
+  <button type="submit">Add task</button>
+</footer>
+<style>
+  footer {
+    position: fixed;
+    background-color: ghostwhite;
+    bottom: 0;
+    left: 20%;
+    right: 20%;
+    height: 2.5em;
+    width: max-content;
+    border-radius: 15px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border: 0.5px solid gainsboro;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    gap: 0.5em;
+    padding-inline: 2em;
+    padding-top: 10px;
+  }
+
+  footer {
+    * {
+      height: fit-content;
+      border: 1px solid gray;
+      border-radius: 5px;
+    }
+
+    select {
+      height: 1.5em;
+    }
+  }
+</style>

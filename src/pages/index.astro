@@ -1,59 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import TasksList from "../components/TasksList.astro";
+import InfoHeader from "../components/InfoHeader.astro";
+import AddTask from "../components/AddTask.astro";
 ---
 
 <Layout title="Flow">
-  <header>
-    <div class="top-header">
-      <img
-        src="https://pub-c09465b043d74aa98a5a45af1737c270.r2.dev/user-icon.svg"
-        alt="side menu"
-      />
-      <span id="date">Sun, 29/09</span>
-      <span>D - 1</span>
-    </div>
-    <span id="sw-time">02:26:03</span>
-  </header>
+  <InfoHeader />
   <main>
     <!-- Provicionales -->
     <TasksList />
     <TasksList />
     <!-- Provicionales -->
   </main>
-  <footer>
-    <input type="text" name="task-name" />
-    <select name="subject">
-      <option value="subject-1">Subject 1</option>
-      <option value="subject-2">Subject 2</option>
-    </select>
-    <button type="submit">Add task</button>
-  </footer>
+  <AddTask />
 </Layout>
 
 <style>
-  header {
-    padding: 5px;
-    padding-top: 1em;
-    padding-bottom: 1.5em;
-    background-color: var(--secundary-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1em 0;
-
-    .top-header {
-      display: flex;
-      gap: 8.5em;
-    }
-  }
-
-  #sw-time {
-    font-size: 1.5em;
-    font-weight: 700;
-  }
-
   main {
     padding-top: 1.5em;
     display: flex;
@@ -63,37 +26,5 @@ import TasksList from "../components/TasksList.astro";
     height: 100vh;
     border-radius: 15px;
     gap: 0.5em;
-  }
-
-  footer {
-    position: fixed;
-    background-color: ghostwhite;
-    bottom: 0;
-    left: 20%;
-    right: 20%;
-    height: 2.5em;
-    width: max-content;
-    border-radius: 15px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    border: 0.5px solid gainsboro;
-    display: flex;
-    justify-content: center;
-    justify-self: center;
-    gap: 0.5em;
-    padding-inline: 2em;
-    padding-top: 10px;
-  }
-
-  footer {
-    * {
-      height: fit-content;
-      border: 1px solid gray;
-      border-radius: 5px;
-    }
-
-    select {
-      height: 1.5em;
-    }
   }
 </style>
