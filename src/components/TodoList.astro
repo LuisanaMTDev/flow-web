@@ -1,0 +1,72 @@
+---
+
+---
+
+<div>
+  <!-- <span class="list-symbol">¯</span> -->
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="icon icon-tabler icons-tabler-outline icon-tabler-point"
+    ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+      d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path></svg
+  >
+  <details open>
+    <summary
+      >Subject
+      <span>01:30:05</span>
+    </summary>
+    <ul>
+      <li>
+        <img
+          src="https://pub-c09465b043d74aa98a5a45af1737c270.r2.dev/without-start-icon-w.svg"
+          alt="state icon"
+        />
+        Task
+      </li>
+    </ul>
+  </details>
+</div>
+
+<style>
+  div {
+    display: flex;
+    align-items: start;
+    gap: 0.3em;
+  }
+
+  .list-symbol {
+    font-size: 1.5em;
+  }
+
+  details ul {
+    margin-block: 10px;
+    padding-left: 1em;
+  }
+
+  details li {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+  }
+
+  details li img {
+    height: 1em;
+    width: 1em;
+  }
+
+  summary span {
+    margin-left: 14em;
+  }
+
+  summary::marker {
+    content: "";
+  }
+</style>

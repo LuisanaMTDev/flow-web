@@ -1,0 +1,71 @@
+---
+
+---
+
+<div>
+    <span>00:00:00</span>
+    <button type="button"
+        ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="white"
+            class="icon icon-tabler icons-tabler-filled icon-tabler-player-pause"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                d="M9 4h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h2a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2z"
+            ></path><path
+                d="M17 4h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h2a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2z"
+            ></path></svg
+        ></button
+    >
+</div>
+<script>
+    let time = 0;
+    let formatedTime;
+
+    const stopBtn = document.querySelector("button");
+    // const htmlBody = document.querySelector("body");
+
+    let intervalID = window.setInterval(() => {
+        time++;
+        formatedTime = new Date(time * 1000).toISOString().substring(11, 19);
+        const oldTimer = document.querySelector("span");
+        const newTimer = oldTimer?.cloneNode();
+        if (newTimer !== undefined) {
+            newTimer.textContent = formatedTime;
+            oldTimer?.replaceWith(newTimer);
+        }
+    }, 1000);
+
+    stopBtn?.addEventListener("click", () => {
+        window.clearInterval(intervalID);
+    });
+</script>
+<style>
+    span {
+        color: white;
+        font-family: "Fredoka Variable";
+        font-size: 2.5em;
+    }
+    button {
+        border: gray solid 1px;
+        background-color: black;
+        width: auto;
+        height: 3em;
+        border-radius: 25px;
+        padding-inline: 0.7em;
+    }
+    svg {
+        width: 1.5em;
+        height: auto;
+    }
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+        margin: 4em;
+        margin-bottom: 1.7em;
+    }
+</style>
