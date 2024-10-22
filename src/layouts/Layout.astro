@@ -31,12 +31,18 @@ const { title } = Astro.props;
     <slot />
   </body>
 </html>
+<script>
+  const detailsElements = document.querySelectorAll("details");
+  detailsElements.forEach((detailsElement) => {
+    detailsElement.addEventListener("click", (event) => {
+      event.preventDefault();
+    });
+  });
+</script>
 <style is:global>
   :root {
     font-family: "Fredoka Variable", sans-serif;
     --secundary-color: #f6d0d9;
     --primary-color: #fff;
-    --subject-one-color: #f4b3a4;
-    --subject-two-color: #f7a6b6;
   }
 </style>
