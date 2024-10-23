@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TodoListStatsView from "../components/TodoListStatsView.astro";
+import TimeTable from "../components/TimeTable.astro";
+---
+
+<Layout title="Flow - Stats of the day">
+  <header>
+    <span>16H30M</span><span>Sun, 29/09/2024</span>
+  </header>
+  <main>
+    <section>
+      <TodoListStatsView />
+      <TodoListStatsView />
+    </section>
+    <TimeTable />
+  </main>
+</Layout>
+<style>
+  body {
+    margin: 0.8em;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  main {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
