@@ -1,5 +1,6 @@
 # build output
 dist/
+log_output.txt
 
 # generated types
 .astro/
