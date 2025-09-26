@@ -9,7 +9,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" x-data>
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -31,14 +31,6 @@ const { title } = Astro.props;
     <slot />
   </body>
 </html>
-<script>
-  const detailsElements = document.querySelectorAll("details");
-  detailsElements.forEach((detailsElement) => {
-    detailsElement.addEventListener("click", (event) => {
-      event.preventDefault();
-    });
-  });
-</script>
 <style is:global>
   :root {
     font-family: "Fredoka Variable", sans-serif;
