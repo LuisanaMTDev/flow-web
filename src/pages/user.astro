@@ -1,10 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import AuthPanel from "../components/AuthPanel.astro"
-
-const logined = false
 ---
 
 <Layout title="User Info">
-  {logined ? <p>I'm logged in</p> : <AuthPanel/>}
+  <template x-if="$store.authInfo.isLogged === false">
+    <AuthPanel/>
+  </template>
+  <template x-if="$store.authInfo.isLogged">
+    <p>I'm Logged in</p>
+  </template>
 </Layout>
+
+<script>
+</script>

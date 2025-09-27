@@ -1,38 +1,19 @@
 ---
 ---
 <section x-data="authPanel">
-  <button @click="openRegisterForm()">Create account</button>
+  <button @click="openRegisterForm">Create account</button>
   <div>
   <button>Login</button>
-  <button>Logout</button>
+    <button>Logout</button>
   </div>
   <dialog id="register-form">
-    <label>Username: <input type="text" name="username" required></label>
-    <label>Password: <input type="password" name="password" required autocomplete="new-password"></label>
-    <button @click="closeRegisterForm()">Register</button>
+    <span class="error" x-show="errors.username" x-text="errors.username"></span>
+    <label>Username: <input type="text" name="username" required x-model="username"></label>
+    <span class="error" x-show="errors.password" x-text="errors.password"></span>
+    <label>Password: <input type="password" name="password" required autocomplete="new-password" x-model="password"></label>
+    <button @click="closeRegisterForm">Register</button>
   </dialog>
 </section>
-
-<script>
-import Alpine from "alpinejs"
-
-document.addEventListener("alpine:init", () => {
-  const registerFormDialog: HTMLDialogElement | null = document.querySelector("#register-form")
-
-  Alpine.data('authPanel', () => ({
-    openRegisterForm() {
-      if (registerFormDialog) {
-        registerFormDialog.showModal()
-      } 
-    },
-    closeRegisterForm() {
-      if (registerFormDialog) {
-        registerFormDialog.close()
-      }
-    }
-  }))
-})
-</script>
 <style>
   section {
     display: flex;
@@ -64,10 +45,19 @@ document.addEventListener("alpine:init", () => {
   #register-form[open] {
     display: block;
     width: 75vw;
+    height: 9rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
+
+    .error {
+      font-size: 0.75rem;
+      color: red;
+      font-weight: lighter;
+      align-self: self-end;
+    }
 
     button {
       width: 50vw;
