@@ -26,7 +26,7 @@ import axios from "axios"
       const registerFormDialog: HTMLDialogElement | null = document.querySelector("#register-form")
 
       const registerFormSchema = v.object({
-          username: v.pipe(v.string(), v.trim(), v.maxLength(12, "Username can't be longer than 12 character"), v.minLength(5, "Username need to be longer than 5 character")),
+          username: v.pipe(v.string(), v.trim(), v.maxLength(12, "Username can't be longer than 12 character"), v.minLength(5, "Username need to be longer than 4 character")),
           password: v.pipe(v.string(), v.trim(), v.minLength(8, "Password need to be longer than 8 character"))
         })
 
