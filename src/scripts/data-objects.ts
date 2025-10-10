@@ -7,7 +7,8 @@ import axios from "axios"
     password: "",
     errors: {
       username: "",
-      password: ""
+      password: "",
+      user: ""
   },
     openRegisterForm() {
       const registerFormDialog: HTMLDialogElement | null = document.querySelector("#register-form")
@@ -19,7 +20,8 @@ import axios from "axios"
     closeRegisterForm() {
       this.errors = {
       username: "",
-      password: ""
+      password: "",
+      user: ""
       }
       const registerFormDialog: HTMLDialogElement | null = document.querySelector("#register-form")
 
@@ -31,16 +33,23 @@ import axios from "axios"
       const parseResult = v.safeParse(registerFormSchema, { username: this.username, password: this.password })
 
         if (registerFormDialog && parseResult.success) {
-          registerFormDialog.close()
-
           axios.post("http://localhost:4322/register", {
             username: this.username,
             password: this.password
-          }).then((response) => {
+          },{
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }).then((response) => {
             console.log(response)
           }).catch((error) => {
-            console.log(error)
+            console.log(error.response.data)
+            this.errors.user = error.response.data
           })
+
+          if (this.errors.user) {
+          registerFormDialog.close()
+          }
         }
 
         if (!parseResult.success) {

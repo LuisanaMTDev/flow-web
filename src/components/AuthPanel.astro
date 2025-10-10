@@ -8,6 +8,7 @@
   </div>
   <dialog id="register-form">
     <span class="error" x-show="errors.username" x-text="errors.username"></span>
+    <span class="error" x-show="errors.user" x-text="errors.user"></span>
     <label>Username: <input type="text" name="username" required x-model="username"></label>
     <span class="error" x-show="errors.password" x-text="errors.password"></span>
     <label>Password: <input type="password" name="password" required autocomplete="new-password" x-model="password"></label>
